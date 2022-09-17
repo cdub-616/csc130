@@ -11,15 +11,17 @@
  *    constructor                                                              *
  * String about()                                                              *
  *    Returns the author's name.                                               *
+ * boolean isEmpty()                                                           *
+ *    Returns true if the linked list is empty.                                *
  * void addHead(String)                                                        *
  *    Adds a node to the head of the linked list.                              *
  * void addTail(String)                                                        *
  *    Adds a node to the tail of the linked list.                              *
  * void removeHead()                                                           *
- *    Removes the head node of the linked list and returns an empty String.    *
+ *    Removes the head node of the linked list and returns a String.           *
  * String peekHead()                                                           *
  *    Returns the value in the head node.                                      *
- * boolean contains(String value)                                              *
+ * boolean contains(String)                                                    *
  *    Returns true if the value is contained within the linked list.           *
  * void print()                                                                *
  *    Prints the values held within the linked list.                           *
@@ -48,9 +50,15 @@ public class Linked_List_Single {
       return "Chris Wright";
    }
    
+   boolean isEmpty() {
+      if (head == null)  //if the list is empty
+         return true;
+      else return false;
+   }
+   
    void addHead(String value) {
       Node_Single newNode = new Node_Single(value);
-      if (head == null) {
+      if (isEmpty()) {  //if the list is empty
          head = newNode;
          tail = newNode;
       }
@@ -61,7 +69,7 @@ public class Linked_List_Single {
    
    void addTail(String value) {
       Node_Single newNode = new Node_Single(value);
-      if (head == null) {
+      if (isEmpty()) {  //if the list is empty
          head = newNode;
          tail = newNode;
       }
@@ -71,10 +79,15 @@ public class Linked_List_Single {
    }
    
    String removeHead() {
-      String data = head.value;
-      head = head.next;  //moves head to next node
-      if (head == null) 
+      String data;
+      if (isEmpty()) {    //if the list is empty
+         data = "";
          tail = null;
+      }
+      else data = head.value;
+      head = head.next;  //moves head to next node
+      //if (isEmpty()) 
+      //   tail = null;
       return data;
    }
    
