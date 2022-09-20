@@ -86,8 +86,6 @@ public class Linked_List_Single {
       }
       else data = head.value;
       head = head.next;  //moves head to next node
-      //if (isEmpty()) 
-      //   tail = null;
       return data;
    }
    
@@ -96,10 +94,10 @@ public class Linked_List_Single {
    }
    
    boolean contains(String value) {
-      return head.contains(head, value);
+      return head.contains(value);
    }
    
    void print() {
-      head.print(head);
+      head.print();
    }
 }

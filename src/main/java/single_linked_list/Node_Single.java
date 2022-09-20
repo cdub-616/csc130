@@ -9,10 +9,10 @@
  *    default constructor                                                      *
  * Node_Single(String)                                                         *
  *    constructor                                                              *
- * boolean contains(Node_Single, String)                                       *
+ * boolean contains(String)                                                    *
  *    Uses an unnecessary recursive call to traverse a linked list.  Returns   *
  *    true if the String is contained within the linked list.                  *
- * void print(Node_Single)                                                     *
+ * void print()                                                                *
  *    Uses an unnecessary recursive call to traverse a linked list and prints  *
  *    the value at each node.                                                  *
  ******************************************************************************/
@@ -34,21 +34,18 @@ public class Node_Single {
       this.next = null;
    }
    
-   boolean contains(Node_Single node, String val) {
-      Node_Single current = node;  //points at current node
-      if (current.value == val)    //compares node value to search value
+   boolean contains(String val) {
+      if (this.value == val)              //if the value is in the node
          return true;
-      else if (current.next != null) {        //if there's another node
-         return contains(current.next, val);  //recursive call to next node
-      }
-      else return false;
+      else if (this.next != null)         //if the value isn't in the node and there's another node
+         return this.next.contains(val);  //  in the linked list
+      else return false;                  //if the value is in none of the nodes
    }
    
-   void print(Node_Single node) {
-      Node_Single current = node;         //points at current node
-      System.out.println(current.value);
-         if (current.next != null) {      //if there's another node
-            print(current.next);          //recursive call to next node
-         }
+   void print() {
+      System.out.println(this.value);
+      if (this.next != null) {  //if there's another node in the linked list
+         this.next.print();     //print the next one
       }
+   }
 }
