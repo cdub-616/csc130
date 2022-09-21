@@ -1,7 +1,7 @@
 /*******************************************************************************
  *                       class Linked_List_Single                              *
  * Chris Wright                                                                *
- * 9/16/2022                                                                   *
+ * Version 1.0.0  9/16/2022                                                    *
  *                                                                             *
  * This class constructs a single linked list.                                 *
  *                                                                             *
@@ -31,19 +31,19 @@ package single_linked_list;
 
 public class Linked_List_Single {
 
-   private Node_Single head,  //head pointer
-                       tail;  //tail pointer
+   private Node_Single head,  //head node pointer
+                       tail;  //tail node pointer
    
    Linked_List_Single() {
       Node_Single node = new Node_Single();
-      head = node;
-      tail = node;
+      head = node;  //point head at new node
+      tail = node;  //point tail at new node
    }
    
    Linked_List_Single(String val) {
       Node_Single node = new Node_Single(val);
-      head = node;
-      tail = node;
+      head = node;  //point head at new node
+      tail = node;  //point tail at new node
    }
 
    String about() {
@@ -58,9 +58,9 @@ public class Linked_List_Single {
    
    void addHead(String value) {
       Node_Single newNode = new Node_Single(value);
-      if (isEmpty()) {  //if the list is empty
-         head = newNode;
-         tail = newNode;
+      if (isEmpty()) {    //if the list is empty
+         head = newNode;  //point head at new node
+         tail = newNode;  //point tail at new node
       }
       else
          newNode.next = head;  //new node points to old head
@@ -69,9 +69,9 @@ public class Linked_List_Single {
    
    void addTail(String value) {
       Node_Single newNode = new Node_Single(value);
-      if (isEmpty()) {  //if the list is empty
-         head = newNode;
-         tail = newNode;
+      if (isEmpty()) {    //if the list is empty
+         head = newNode;  //point head at new node
+         tail = newNode;  //point tail at new node
       }
       else
          tail.next = newNode;  //old tail points to new node
@@ -85,7 +85,7 @@ public class Linked_List_Single {
          tail = null;
       }
       else data = head.value;
-      head = head.next;  //moves head to next node
+      head = head.next;  //move head to next node
       return data;
    }
    

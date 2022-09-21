@@ -1,10 +1,9 @@
 /*******************************************************************************
- *                       class Node_Single                                     *
+ *                       Linked_List_Single_Demo                               *
  * Chris Wright                                                                *
- * 9/16/2022                                                                   *
+ * Version 1.0.0  9/16/2022                                                    *
  *                                                                             *
  * This class demonstrates the Linked_List_Single class.                       *
- *                                                                             *
  ******************************************************************************/
 
 package single_linked_list;
@@ -78,5 +77,4 @@ public class Linked_List_Single_Demo {
 	   System.out.println(testList.contains("ten"));
 	   System.out.println("Guess not.  Have a nice day!");
 	}
-
 }

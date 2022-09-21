@@ -1,7 +1,7 @@
 /*******************************************************************************
  *                       class Node_Single                                     *
  * Chris Wright                                                                *
- * 9/16/2022                                                                   *
+ * Version 1.0.0  9/16/2022                                                    *
  *                                                                             *
  * This class constructs a node for use in single linked lists.                *
  *                                                                             *
@@ -21,8 +21,8 @@ package single_linked_list;
 
 public class Node_Single {
 
-   Node_Single next;  //the next node pointed at
-   String value;      //the value of the data in the node
+   Node_Single next;  //next node in linked list
+   String value;      //value of data in node
    
    Node_Single() {
       this.value = "empty";
@@ -35,17 +35,16 @@ public class Node_Single {
    }
    
    boolean contains(String val) {
-      if (this.value == val)              //if the value is in the node
+      if (this.value == val)              //if value is in node
          return true;
-      else if (this.next != null)         //if the value isn't in the node and there's another node
-         return this.next.contains(val);  //  in the linked list
-      else return false;                  //if the value is in none of the nodes
+      else if (this.next != null)         //if value isn't in node and there's
+         return this.next.contains(val);  //  another node in linked list
+      else return false;                  //if value is in none of the nodes
    }
    
    void print() {
       System.out.println(this.value);
-      if (this.next != null) {  //if there's another node in the linked list
-         this.next.print();     //print the next one
-      }
+      if (this.next != null)  //if there's another node in linked list
+         this.next.print();   //print next one
    }
 }
