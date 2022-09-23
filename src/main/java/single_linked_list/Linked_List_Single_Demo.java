@@ -2,6 +2,7 @@
  *                       Linked_List_Single_Demo                               *
  * Chris Wright                                                                *
  * Version 1.0.0  9/16/2022                                                    *
+ * Version 1.0.1  9/22/2022 added test for null case Linked_List_Single        *
  *                                                                             *
  * This class demonstrates the Linked_List_Single class.                       *
  ******************************************************************************/
@@ -17,7 +18,8 @@ public class Linked_List_Single_Demo {
 			  three = "three",
 			  four = "four",
 			  five = "five",
-			  six = "six";
+			  six = "six",
+	          nothing = "";
 	   
 	   //test results for default constructor
 	   Linked_List_Single defaultList = new Linked_List_Single();
@@ -34,6 +36,12 @@ public class Linked_List_Single_Demo {
 	   System.out.println("False for nope and true for yep.");
 	   //test results for isEmpty
 	   System.out.println(defaultList.isEmpty());
+	   //test for contains null case
+	   System.out.println("Does the list contain anything?");
+	   System.out.println(defaultList.contains(nothing));
+	   //test for print null case
+	   System.out.println("What does the list look like?");
+	   defaultList.print();
 	   System.out.println("Guess so.");
 	   System.out.println();
 	   

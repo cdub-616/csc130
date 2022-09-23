@@ -2,6 +2,7 @@
  *                       class Linked_List_Single                              *
  * Chris Wright                                                                *
  * Version 1.0.0  9/16/2022                                                    *
+ * Version 1.0.1  9/22/2022 included null case in print and contains methods   *
  *                                                                             *
  * This class constructs a single linked list.                                 *
  *                                                                             *
@@ -94,10 +95,14 @@ public class Linked_List_Single {
    }
    
    boolean contains(String value) {
-      return head.contains(value);
+      if (isEmpty())
+         return false;
+      else return head.contains(value);
    }
    
    void print() {
-      head.print();
+      if (!isEmpty())
+         head.print();
+      else System.out.println("");
    }
 }
